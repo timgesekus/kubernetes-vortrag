@@ -248,3 +248,5 @@ helm rollback -n hello-server hello-server-release
 
 * [Kubernetes](https://kubernetes.io/)
 * [Helm](https://helm.sh)
+* [docker](https://docker.io)
+* [Git Repo](https://github.com/timgesekus/kubernetes-vortrag)
