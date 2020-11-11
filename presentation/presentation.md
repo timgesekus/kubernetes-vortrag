@@ -28,8 +28,8 @@ Warum steigen alle auf den Zug auf.
 
 ### Docker​
 ### Kubernetes​
-### Infrastructure as Code​
 ### Helm
+### Infrastructure as Code​
 
 ## Der Gegenstand der Betrachtung
 
@@ -211,6 +211,27 @@ spec:
   ports:
   - port: 9000
     targetPort: 9000
+```
+
+## Kubernetes Ingress Beispiel
+
+```yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: hello-server-ingress
+spec:
+  tls:
+  - hosts:
+    - tim.newsimweb.cloud
+    secretName: tim-tls
+  rules:
+  - http:
+      paths:
+      - path: /hello
+        backend:
+          serviceName: hello-server-service
+          servicePort: 9000
 ```
 
 ## Helm
